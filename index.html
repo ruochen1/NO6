@@ -1,30 +1,27 @@
-<!DOCTYPE html>
 <html>
 <head>
-<script src="/jquery/jquery-1.11.1.min.js">
+<script src="https://libs.baidu.com/jquery/1.10.2/jquery.min.js">
 </script>
 <script>
+var i=1;
 $(document).ready(function(){
-  $("#btn1").click(function(){
-    $("p").append(" <b>Appended text</b>.");
+  $("#show").click(function(){
+  var txt1=$("<span></span>").text(i++);
+  var txt2=$("<span></span>").text(" ");
+  $("body").append(txt1,txt2);
   });
 
-  $("#btn2").click(function(){
-    $("ol").append("<li>Appended item</li>");
+  $("#del").click(function(){
+    $("span").remove();
+    i=1;
   });
 });
 </script>
 </head>
 
 <body>
-<p>This is a paragraph.</p>
-<p>This is another paragraph.</p>
-<ol>
-<li>List item 1</li>
-<li>List item 2</li>
-<li>List item 3</li>
-</ol>
-<button id="btn1">追加文本</button>
-<button id="btn2">追加列表项</button>
+<button id="show">添加</button>
+<button id="del"> 清空</button>
+<br>
 </body>
 </html>
